@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Cadastro Integrante</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<header class="text-center text-white bg-dark">PROGRAMAÇÃO PARA INTERNET - 3PPA (EAD) // CRISTIANO DE CARVALHO PARANGABA RA:10482211981</header>
+<script src="index.js"></script>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Formulario</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="clijs()">Contato</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="clijs()">Outros</a>
+    </li>
+  </ul>
+</nav>
+
+<section class="bg-light">
+    <div class="container w-50 border p-5">
+
+        <h2 class="text-center">Cadastro Integrante</h2>
+        
+        <form action="/action_page.php" class="was-validated"><br>
+          
+          <div class="row g-3">
+            <div class="col">
+              <label for="nome">Nome Completo:</label>  
+              <input type="text" class="form-control" id= "nome" placeholder="Nome completo.." aria-label="Nome completo" required>
+            </div>
+            <div class="col">
+              <label for="cpf">CPF:</label>  
+              <input type="number" class="form-control" id="cpf" placeholder="CPF, apenas numeros" aria-label="CPF" required>
+            </div>
+          </div>
+
+          <div class="col-14">
+            <label for="endereco" class="form-label">Endereço:</label>
+            <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço aqui..." required>
+          </div>
+          <div class="col-14">
+            <label for="bairro" class="form-label">Bairro:</label>
+            <input type="text" class="form-control" id="bairro" placeholder="Bairro..." required>
+          </div>
+          <div class="col-md-14">
+            <label for="cidade" class="form-label">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" placeholder="Sua cidade..." required>
+          </div>
+
+          <div class="col-md-14">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Seu e-mail..." required>
+          </div>
+      
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" class="form-control" id="telefone" placeholder="Telefone, com (ddd).." name="telefone" required>
+          </div>
+
+          <div class="row 3">
+            <div class="form-group">
+              <label for="instrumento">Instrumento:</label>
+              <select class="form-select" id="instrumento" aria-label="Default select example" required>
+                <option selected>Selecione Instrumento</option>
+                <option value="1">Vocal</option>
+                <option value="2">Piano</option>
+                <option value="3">Bateria</option>
+                <option value="4">Violão</option>
+                <option value="5">Flauta</option>
+                <option value="6">Violino</option>
+              </select>
+            </div>
+  
+            <div class="col-md-4">
+              <label for="uf" class="form-label">Estado:</label>
+              <select id="uf" class="form-select">
+                <option selected>SP</option>
+                <option>AM</option>
+                <option>RJ</option>
+                <option>MS</option>
+                <option>BA</option>
+              </select>
+            </div>
+          </div>
+          
+          <br>
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember" required> Concordo com os termos.
+              <div class="valid-feedback">Valido.</div>
+              <div class="invalid-feedback">Marque esta caixa de seleção para continuar.</div>
+            </label>
+          </div>
+
+    
+          <div class="form-check"> 
+          </div>
+          
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
+            <button class="btn btn-danger" type="reset">Resetar</button>
+            <button class="btn btn-primary" type="button">Concluir</button>
+          </div>
+
+        </form>
+      </div>
+      
+</section>
+
+</body>
+</html>

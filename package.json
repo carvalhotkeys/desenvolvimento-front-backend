@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/carvalhotkeys/desenvolvimento-front-backend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
   }
 }
