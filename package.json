@@ -1,0 +1,29 @@
+{
+  "name": "desenvolvimento-front-backend",
+  "version": "1.0.0",
+  "description": "desenvolvimento-front-backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carvalhotkeys/desenvolvimento-front-backend.git"
+  },
+  "keywords": [
+    "front",
+    "backend",
+    "fullstack"
+  ],
+  "author": "Cristiano Carvalho Parangaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carvalhotkeys/desenvolvimento-front-backend/issues"
+  },
+  "homepage": "https://github.com/carvalhotkeys/desenvolvimento-front-backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
