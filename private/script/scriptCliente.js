@@ -3,6 +3,20 @@ var formulario = document.getElementById("formCliente");
 formulario.onsubmit = manipularSubmissao;
 const urlBackend = 'http://localhost:3040/integrantes';
 
+function obterClientesBackend(){
+    fetch(urlBackend,{method:"GET"}).then((resposta)=>{
+        return resposta.json();
+    })
+    .then((dados)=>{
+        //return dados;
+        if(dados.length > 0)
+    }).catch((erro)=>{
+        mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
+                                    ${erro.message}
+                              </div>`
+    })
+}
+
 function gravarClienteBackend(){
     let cpf = document.getElementById("cpf").value;
     let nome = document.getElementById("nome").value;

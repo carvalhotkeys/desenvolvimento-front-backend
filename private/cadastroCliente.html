@@ -69,14 +69,30 @@
             <input type="tel" class="form-control" id="telefone" placeholder="Telefone, com (ddd).." name="telefone" required>
           </div>
 
-          <div class="col-md-14">
-            <label for="instrumento" class="form-label">Instrumento:</label>
-            <input type="text" class="form-control" id="instrumento" placeholder="Instrumento..." required>
-          </div>
-
-          <div class="col-md-14">
-            <label for="uf" class="form-label">Estado:</label>
-            <input type="text" class="form-control" id="uf" placeholder="Estado..." required>
+          <div class="row 3">
+            <div class="form-group">
+              <label for="instrumento">Instrumento:</label>
+              <select class="form-select" id="instrumento" aria-label="Default select example">
+                <option selected value="Nada informado">Selecione Instrumento</option>
+                <option value="Vocal">Vocal</option>
+                <option value="Piano">Piano</option>
+                <option value="Bateria">Bateria</option>
+                <option value="Violão">Violão</option>
+                <option value="Flauta">Flauta</option>
+                <option value="Violino">Violino</option>
+              </select>
+            </div>
+  
+            <div class="col-md-4">
+              <label for="uf" class="form-label">Estado:</label>
+              <select id="uf" class="form-select">
+                <option selected>SP</option>
+                <option>AM</option>
+                <option>RJ</option>
+                <option>MS</option>
+                <option>BA</option>
+              </select>
+            </div>
           </div>
           <br>
 
