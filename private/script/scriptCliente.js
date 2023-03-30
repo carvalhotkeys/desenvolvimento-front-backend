@@ -34,7 +34,10 @@ function exibirClienteFormaTabela(listaClientes){
                           <td>${listaClientes[i].telefone}</td>
                           <td>${listaClientes[i].instrumento}</td>
                           <td>${listaClientes[i].uf}</td>
-                          <td>button</td>`
+                          <td>
+                            <button type="button" class="btn btn-warning">Editar</button>
+                            <button type="button" class="btn btn-danger">Excluir</button>
+                          </td>`
         corpo.appendChild(linha);
                           
     }
