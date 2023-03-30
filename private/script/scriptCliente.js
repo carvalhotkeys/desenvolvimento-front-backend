@@ -3,13 +3,59 @@ var formulario = document.getElementById("formCliente");
 formulario.onsubmit = manipularSubmissao;
 const urlBackend = 'http://localhost:3040/integrantes';
 
+function exibirClienteFormaTabela(listaIntegrantes){
+    let divTabela = document.getElementById("tabela");
+    let tabela = document.createElement('table');
+    tabela.className = 'table table-hover';
+    let cabecalho = document.createElement('thead');
+    cabecalho.innerHTML = `<tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                                <th>Cidade</th>
+                                <th>Bairro</th>
+                                <th>UF</th>
+                                <th>E-mail</th>
+                                <th>Instrumento</th>
+                                <th>Ações</th>
+                           </tr>`
+    tabela.appendChild(cabecalho);
+    let corpo = document.createElement('tbody');
+    for (let i=0; i<listaIntegrantes.length; i++){
+        let linha = document.createElement('tr');
+        linha.innerHTML = `<td>${listaIntegrantes[i].nome}<t/d>`
+                          `<td>${listaIntegrantes[i].cpf}<t/d>`
+                          `<td>${listaIntegrantes[i].telefone}<t/d>`
+                          `<td>${listaIntegrantes[i].endereco}<t/d>`
+                          `<td>${listaIntegrantes[i].cidade}<t/d>`
+                          `<td>${listaIntegrantes[i].bairro}<t/d>`
+                          `<td>${listaIntegrantes[i].uf}<t/d>`
+                          `<td>${listaIntegrantes[i].email}<t/d>`
+                          `<td>${listaIntegrantes[i].instrumento}<t/d>`
+                          `<td>button<t/d>`
+        corpo.appendChild(linha);
+                          
+    }
+    tabela.appendChild(corpo);
+    divTabela.appendChild(tabela);
+}
+
 function obterClientesBackend(){
-    fetch(urlBackend,{method:"GET"}).then((resposta)=>{
+    fetch(urlBackend,{method:"GET"})
+    .then((resposta)=>{
         return resposta.json();
     })
     .then((dados)=>{
         //return dados;
-        if(dados.length > 0)
+        if(dados.length > 0){
+            exibirClienteFormaTabela(dados);
+        }
+        else{
+            mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
+                                     não existe clientes na base;
+                                  </div>`
+        }
     }).catch((erro)=>{
         mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
                                     ${erro.message}
@@ -49,6 +95,7 @@ function gravarClienteBackend(){
         return resposta.json();
     }).then((dados)=>{
         if(dados.status){
+            obterClientesBackend();
             mensagem.innerHTML = `<div class="alert alert-success" role="alert">
                                         ${dados.mensagem}
                                  </div>`
@@ -145,3 +192,5 @@ function validarCliente(){
     mensagem.innerHTML="";
         return true;
 }
+
+obterClientesBackend();
