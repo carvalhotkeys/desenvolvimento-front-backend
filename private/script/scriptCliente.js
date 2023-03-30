@@ -3,37 +3,38 @@ var formulario = document.getElementById("formCliente");
 formulario.onsubmit = manipularSubmissao;
 const urlBackend = 'http://localhost:3040/integrantes';
 
-function exibirClienteFormaTabela(listaIntegrantes){
+function exibirClienteFormaTabela(listaClientes){
+
     let divTabela = document.getElementById("tabela");
     let tabela = document.createElement('table');
-    tabela.className = 'table table-hover';
+    tabela.className = 'table table-striped table-hover';
     let cabecalho = document.createElement('thead');
     cabecalho.innerHTML = `<tr>
-                                <th>Nome</th>
                                 <th>CPF</th>
-                                <th>Telefone</th>
+                                <th>Nome</th>
                                 <th>Endereço</th>
-                                <th>Cidade</th>
                                 <th>Bairro</th>
-                                <th>UF</th>
+                                <th>Cidade</th>
                                 <th>E-mail</th>
+                                <th>Telefone</th>
                                 <th>Instrumento</th>
+                                <th>UF</th>
                                 <th>Ações</th>
-                           </tr>`
+                           <tr>`
     tabela.appendChild(cabecalho);
     let corpo = document.createElement('tbody');
-    for (let i=0; i<listaIntegrantes.length; i++){
+    for (let i=0; i<listaClientes.length; i++){
         let linha = document.createElement('tr');
-        linha.innerHTML = `<td>${listaIntegrantes[i].nome}<t/d>`
-                          `<td>${listaIntegrantes[i].cpf}<t/d>`
-                          `<td>${listaIntegrantes[i].telefone}<t/d>`
-                          `<td>${listaIntegrantes[i].endereco}<t/d>`
-                          `<td>${listaIntegrantes[i].cidade}<t/d>`
-                          `<td>${listaIntegrantes[i].bairro}<t/d>`
-                          `<td>${listaIntegrantes[i].uf}<t/d>`
-                          `<td>${listaIntegrantes[i].email}<t/d>`
-                          `<td>${listaIntegrantes[i].instrumento}<t/d>`
-                          `<td>button<t/d>`
+        linha.innerHTML = `<td>${listaClientes[i].cpf}</td>
+                          <td>${listaClientes[i].nome}</td>
+                          <td>${listaClientes[i].endereco}</td>
+                          <td>${listaClientes[i].bairro}</td>
+                          <td>${listaClientes[i].cidade}</td>
+                          <td>${listaClientes[i].email}</td>
+                          <td>${listaClientes[i].telefone}</td>
+                          <td>${listaClientes[i].instrumento}</td>
+                          <td>${listaClientes[i].uf}</td>
+                          <td>button</td>`
         corpo.appendChild(linha);
                           
     }
