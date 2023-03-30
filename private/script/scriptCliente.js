@@ -371,5 +371,7 @@ function limparTabela() {
     var tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
   }
+
+
   
 obterClientesBackend();
