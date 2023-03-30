@@ -54,7 +54,7 @@ function exibirClienteFormaTabela(listaClientes){
                                                                 '${listaClientes[i].telefone}',
                                                                 '${listaClientes[i].instrumento}',
                                                                 '${listaClientes[i].uf}',
-                                                                'excluir')" type="button" class="btn btn-danger">Ecluir</button>
+                                                                'excluir')" type="button" class="btn btn-danger">Excluir</button>
                           </td>`
         corpo.appendChild(linha);
                           
@@ -117,13 +117,12 @@ function gravarClienteBackend(){
         return resposta.json();
     }).then((dados)=>{
         if(dados.status){
+            limpaFormulario();
+            limparTabela();
             obterClientesBackend();
             mensagem.innerHTML = `<div class="alert alert-success" role="alert">
                                         ${dados.mensagem}
                                  </div>`
-            limpaFormulario()
-            location.reload();
-            obterClientesBackend()
         }
         else{
             mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
@@ -295,7 +294,7 @@ function apagarCliente(){
                                         ${dados.mensagem}
                                  </div>`
             limpaFormulario();
-            location.reload();
+            limparTabela();
             obterClientesBackend();
         }).catch((erro)=>{
             mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
@@ -343,13 +342,12 @@ function atualizarCliente(){
             return resposta.json();
         }).then((dados)=>{
             if(dados.status){
+                limpaFormulario();
+                limparTabela();
                 obterClientesBackend();
                 mensagem.innerHTML = `<div class="alert alert-success" role="alert">
                                             ${dados.mensagem}
                                      </div>`
-                limpaFormulario();
-                location.reload();
-                obterClientesBackend();
             }
             else{
                 mensagem.innerHTML = `<div class="alert alert-danger" role="alert">
@@ -369,4 +367,9 @@ function atualizarCliente(){
     }
 }
 
+function limparTabela() {
+    var tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+  }
+  
 obterClientesBackend();
