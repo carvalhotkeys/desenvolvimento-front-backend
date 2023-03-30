@@ -100,9 +100,10 @@
 
           </div>
           <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
-            <button class="btn btn-danger" type="reset">Resetar</button>
-            <button class="btn btn-primary" type="submit">Concluir</button>
+            <button class="btn btn-secondary" id="voltar" type="button" onclick="history.back()">Voltar</button>
+            <button class="btn btn-warning"  id="editar" type="button" disabled onclick="atualizarCliente()" >Atualizar</button>
+            <button class="btn btn-danger"  id="excluir" type="button" onclick="apagarCliente()" disabled>Excluir</button>
+            <button class="btn btn-primary"  id="cadastrar" type="submit">Cadastrar</button>
           </div>
 
           </div>
