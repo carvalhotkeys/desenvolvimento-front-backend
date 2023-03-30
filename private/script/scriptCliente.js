@@ -23,7 +23,7 @@ function gravarClienteBackend(){
         body: JSON.stringify({
             "cpf":cpf,
             "nome":nome,
-            "endreco":endereco,
+            "endereco":endereco,
             "bairro":bairro,
             "cidade":cidade,
             "email":email,
