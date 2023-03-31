@@ -6,7 +6,7 @@ Applicativos Usados:<br>
 [XAMPP](https://www.apachefriends.org/pt_br/index.html) <br>
 [MySQL](https://www.mysql.com/products/workbench/)
 
-Instaladores necessários para o projeto: <br>
+Instaladores necessários para criação do projeto: <br>
 importante add module e start* <br>
 
 
