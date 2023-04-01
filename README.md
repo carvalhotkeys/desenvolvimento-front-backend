@@ -1,5 +1,5 @@
 # desenvolvimento-front-backend
- Desenvolvimento do front-end e integração ao back-end <br>
+ Desenvolvimento do front-end e integração ao back-end  "full-stack"<br>
 Link do teste feito com o [projeto](https://youtu.be/07kFP2zW5LQ)<br>
 
 Applicativos Usados:<br>
